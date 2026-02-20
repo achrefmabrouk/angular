@@ -11,7 +11,7 @@
         <th>Date</th>
         <th>Statut</th>
         <th>Likes</th>
-        <th>Actions</th> <!-- Nouvelle colonne -->
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -33,13 +33,18 @@
         </td>
         <td>{{ suggestion.nbLikes }}</td>
         <td>
-          <!-- Les boutons n’apparaissent pas si le statut est refusé -->
-          <button *ngIf="suggestion.status !== 'refusee'" (click)="addLike(suggestion)">
-            👍 Like
+          <button [routerLink]="['/suggestions', suggestion.id]" class="btn-details">
+            👁️ Détails
           </button>
-          <button *ngIf="suggestion.status !== 'refusee'" (click)="addToFavorites(suggestion)">
-            ⭐ Ajouter aux favoris
-          </button>
+
+          <ng-container *ngIf="suggestion.status !== 'refusee'">
+            <button (click)="addLike(suggestion)">
+              👍 Like
+            </button>
+            <button (click)="addToFavorites(suggestion)">
+              ⭐ Favoris
+            </button>
+          </ng-container>
         </td>
       </tr>
     </tbody>

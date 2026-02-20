@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
+import { ListSuggestionComponent } from './features/suggestions/list-suggestion/list-suggestion.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'home',component: HomeComponent},
   
 { path: 'listsugg',component: ListSuggestionComponent},
+  { path: 'suggestions', loadChildren: () => import('./features/suggestions/suggestions.module').then(m => m.SuggestionsModule) },
+  { path: 'users', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) },
 { path: '**',component: NotFoundComponent}];
 
 @NgModule({
