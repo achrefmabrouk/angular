@@ -9,6 +9,8 @@ import { ListSuggestionComponent } from './features/suggestions/list-suggestion/
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavComponent } from './nav/nav.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { NavComponent } from './nav/nav.component';
     ListSuggestionComponent,
     HomeComponent,
     NotFoundComponent,
-    NavComponent
+    NavComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

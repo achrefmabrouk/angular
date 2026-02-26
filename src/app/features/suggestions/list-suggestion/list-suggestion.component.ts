@@ -49,14 +49,11 @@ export class ListSuggestionComponent {
 
 favorites: Suggestion[] = [];
 
-  // Méthode pour incrémenter les likes
   addLike(suggestion: Suggestion) {
     suggestion.nbLikes += 1;
   }
 
-  // Méthode pour ajouter aux favoris
   addToFavorites(suggestion: Suggestion) {
-    // Vérifie si la suggestion n’est pas déjà dans favorites
     const exists = this.favorites.find(fav => fav.id === suggestion.id);
     if (!exists) {
       this.favorites.push(suggestion);
