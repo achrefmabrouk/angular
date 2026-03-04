@@ -9,7 +9,8 @@ const routes: Routes = [
   
   { path: 'add', component: SuggestionFormComponent },
   
-  { path: ':id', component: SuggestionDetailsComponent }
+  { path: ':id', component: SuggestionDetailsComponent },
+  { path: 'update/:id', component: SuggestionFormComponent }
 ];
 
 @NgModule({

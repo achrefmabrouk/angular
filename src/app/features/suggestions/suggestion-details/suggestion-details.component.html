@@ -46,7 +46,9 @@
       <button routerLink="/suggestions" class="btn-back">
         ⬅ Retour à la liste
       </button>
-    </div>
+<button *ngIf="suggestion" [routerLink]="['/suggestions/update', suggestion.id]">
+  Update
+</button>    </div>
   </div>
 </div>
 
